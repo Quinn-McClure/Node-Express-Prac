@@ -5,15 +5,17 @@ const server = http.createServer(function (req, res) {
     const pathName = req.url;
 
     if(pathName === '/') {
-        res.end('THis is the home page');
+        res.end('This is the home page');
     }
     else if(pathName === '/movies') {
-        res.end('THis is the movies page');
+        res.end('This is the movies page');
     }
     else {
-        res.end('page not found')
+        res.writeHead(404, {
+            'Content-Type': 'text/html'
+        });
+        res.end('<h1>page not found</h1>');
     }
-
     console.log(pathName);
 });
 
