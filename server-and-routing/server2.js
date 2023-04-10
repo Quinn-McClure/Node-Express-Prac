@@ -9,7 +9,7 @@ const server = http.createServer(function(req, res) {
         res.writeHead(200, {
             'Content-Type': 'text/html'
         });
-        res.end('<h1>Home</h1>');
+        res.end('<h1>Home</h1><p>hello all</p>');
     }
     else if(pathName === '/bio') {
         res.writeHead(200, {
@@ -19,6 +19,7 @@ const server = http.createServer(function(req, res) {
     }
     else {
         res.end('Page Not Found');
+        //res.end('<h1>page not found</h1>');
         console.log(req.url);
     }
 });
