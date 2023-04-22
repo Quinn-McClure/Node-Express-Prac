@@ -11,6 +11,9 @@ const replaceTemplate = (temp, item) => {
 
 const page = fs.readFileSync(`${__dirname}/overview.html`);
 
+const jData = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+const data = JSON.parse(jData);
+
 
 //server routes
 const server = http.createServer(function(req, res) {
@@ -18,6 +21,10 @@ const server = http.createServer(function(req, res) {
 
     if(pathName === '/') {
         res.writeHead(200, {'Content-Type': 'text/html'});
+
+        const imageHtml = data.map(element => replaceTemplate(page, element)).join('');
+
+        const output = page.replace('{%IMAGE%}', page);
     }
 });
 
