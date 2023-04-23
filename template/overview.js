@@ -11,7 +11,7 @@ const replaceTemplate = (temp, item) => {
 
 const page = fs.readFileSync(`${__dirname}/overview.html`);
 
-const jData = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+const jData = fs.readFileSync(`${__dirname}/data.json`, 'utf-8');
 const data = JSON.parse(jData);
 
 
