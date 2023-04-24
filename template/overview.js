@@ -4,7 +4,7 @@ const fs = require('fs');
 
 //stuff that gets loaded when the server is loaded
 const replaceTemplate = (temp, item) => {
-    let output = output.replace(/{%IMAGE%}/g, item.image);
+    let output = temp.replace(/{%IMAGE%}/g, item.image);
 
     return output
 }
