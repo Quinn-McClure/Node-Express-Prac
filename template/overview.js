@@ -22,7 +22,7 @@ const server = http.createServer(function(req, res) {
     if(pathName === '/') {
         res.writeHead(200, {'Content-Type': 'text/html'});
 
-        const imageHtml = data.map(element => replaceTemplate(page, element)).join('');
+        const page = data.map(element => replaceTemplate(/{%IMAGE%}/g, element)).join('');
 
         const output = page.replace('{%IMAGE%}', page);
     }
